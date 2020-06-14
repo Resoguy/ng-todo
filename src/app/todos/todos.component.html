@@ -1,0 +1,26 @@
+<h1>Todos</h1>
+
+<div>
+  <input type="text" placeholder="Enter a todo..." [(ngModel)]="todo"/>
+  <button type="button" (click)="addTodo()">Add Todo</button>
+</div>
+
+<h2 *ngIf="!todos.length">No Todos found!</h2>
+
+<!-- <div [ngClass]="{ isDone: todo.done, textWhite: todo.done }" class="todo-wrapper" *ngFor="let todo of todos">
+  <input 
+    class="todo-checkbox"
+    type="checkbox" 
+    [checked]="todo.done" 
+    (change)="toggleTodo(todo.id)" />
+  <p class="todo-title">{{ todo.title }}</p>
+  <button class="delete-btn" (click)="deleteTodo(todo.id)">Delete</button>
+</div> -->
+
+<app-todo 
+  *ngFor="let todo of todos"
+  [todo]="todo" 
+  (onDelete)="deleteTodo($event)"
+  (onChange)="toggleTodo(todo.id)"
+  (onEdit)="editTodo($event, todo.id)">
+</app-todo>

@@ -1,0 +1,49 @@
+.todo-wrapper {
+  background: #eee;
+  padding: 15px;
+  border-radius: 4px;
+  margin: 20px;
+}
+
+.todo-title {
+  font-size: 21px;
+  color: #333;
+}
+
+.delete-btn {
+  background: orangered;
+  padding: 1rem;
+  border-radius: 4px;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  transition: 200ms all ease-in-out;
+
+  &:hover {
+    background-color: red;
+  }
+}
+
+.edit-btn {
+  background: blue;
+  padding: 1rem;
+  border-radius: 4px;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  transition: 200ms all ease-in-out;
+
+  &:hover {
+    background-color: blueviolet;
+  }
+}
+
+.isDone {
+  background-color: green;
+}
+
+.textWhite {
+  p {
+    color: #fff!important;
+  }
+}

@@ -1,0 +1,16 @@
+<div 
+  [ngClass]="{ isDone: todo.done, textWhite: todo.done }" 
+  class="todo-wrapper">
+
+  <input type="checkbox" [checked]="todo.done" (change)="onChange.emit()" />
+  <p class="todo-title">{{ todo.title }}</p>
+  <button class="delete-btn" (click)="onDelete.emit(todo.id)">Delete</button>
+
+  <button class="edit-btn" (click)="showEdit = !showEdit">Edit</button>
+
+  <div *ngIf="showEdit">
+    <input type="text" [(ngModel)]="editText"/>
+    <button class="edit-btn" (click)="finishEditing()">Finish Editing</button>
+  </div>
+  
+</div>
